@@ -1,11 +1,15 @@
 #!/bin/bash -x
+echo "wellcome to User-Registration Problem"
 
-read -p "enter  email =" email 
+shopt -s extglob
+echo  "enter password"
+read pattern
 
-pattern="/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/"
-if [[ $email   =~ $pattern ]]
+pat="[a-zA-Z\d]{8,}(?=.*[@#$%^&+=]).*$"
+if [[ $pattern =~ $pat ]];
 then
-echo "email   is valid"
+     echo yes;
 else
-echo "email is   invalid"
+     echo no;
 fi
+
