@@ -1,11 +1,16 @@
-#!/bin/bash -x
+#!/bin/bash
 
-read -p "enter  last name=" email
+echo "wellcome to User-Registration Problem"
 
-pattern="(^[a-zA-Z0-9){3})[.]{1}([a-zA-Z0-9}){3})@bl.co[.]{0,1}"{1,2}$"
-if [[ $email =~ $pattern ]]
+shopt -s extglob
+echo  "enter email"
+read email
+
+pat="^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{>
+if [[ $email =~ $pat ]]
 then
-echo "email is valid"
+    echo email is valid;
 else
-echo "email is invalid"
+    echo email is invalid;
 fi
+
