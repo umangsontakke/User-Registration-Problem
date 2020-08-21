@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "wellcome to User-Registration Problem"
 
 shopt -s extglob
