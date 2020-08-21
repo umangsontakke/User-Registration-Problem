@@ -1,11 +1,16 @@
-#!/bin/bash -x
+#!/bin/bash
 
-read -p "enter  Country code =" Country_code 
+echo "wellcome to User-Registration Problem"
 
-pattern="[a-zA-Z0-9]{8,}$"
-if [[ $Country_code  =~ $pattern ]]
+shopt -s extglob
+echo  "enter mobile no"
+read mono
+
+pat="^91[ ][0-9]{10}$"
+if [[ $mono =~ $pat ]];
 then
-echo "Country_code  is valid"
+        echo mobile no is valid;
 else
-echo "Country_code  invalid"
+        echo mobile no is invalid;
 fi
+
