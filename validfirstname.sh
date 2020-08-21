@@ -1,11 +1,15 @@
-#!/bin/bash -x
+#!/bin/bash
+echo "wellcome to User-Registration Problem"
 
-read -p "enter  first name=" first_name
+shopt -s extglob
+echo  "enter first name"
+read fname
 
-first_name_pattern="^[[:upper:]]{1}[[:lower:]]{2,}$"
-if [[ $first_name =~ $first_name_pattern ]]
+pat="^[[:upper:]][[:alpha:]]{2,14}$"
+if [[ $fname =~ $pat ]];
 then
-echo "first name is valid"
+    echo first name is valid;
 else
-echo "first name is invalid"
+    echo first name is invalid;
 fi
+
