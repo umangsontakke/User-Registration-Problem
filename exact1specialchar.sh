@@ -1,11 +1,16 @@
-#!/bin/bash -x
+#!/bin/bash
 
-read -p "enter  password =" password 
+echo "wellcome to User-Registration Problem"
 
-pattern="^(?=.*[A-Za-z]) !@#$%^&{1}(?=.*\d)[A-Za-z\d]{8,}$"
-if [[ $password   =~ $pattern ]]
+shopt -s extglob
+echo  "enter password"
+read pattern
+
+pat="[a-zA-Z\d]{8,}(?=.*[@#$%^&+=]).*$"
+if [[ $pattern =~ $pat ]];
 then
-echo "password   is valid"
+        echo password is valid;
 else
-echo "password   invalid"
+        echo password is invalid;
 fi
+
