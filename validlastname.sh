@@ -1,11 +1,15 @@
-#!/bin/bash -x
+#!/bin/bash
 
-read -p "enter  last name=" last_name
+echo "wellcome to User-Registration Problem"
 
-last_name_pattern="^[A-Z]{3,25}$"
-if [[ $last_name =~ $last_name_pattern ]]
+shopt -s extglob
+echo  "enter last name"
+read lname
+
+pat="^[[:upper:]][[:alpha:]]{2,14}$"
+if [[ $lname =~ $pat ]];
 then
-echo "last name is valid"
+    echo last name is valid;
 else
-echo "last name is invalid"
+    echo last name is invalid;
 fi
