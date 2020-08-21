@@ -1,4 +1,5 @@
-#!/bin/bash -x
+#!/bin/bash
+
 echo "wellcome to User-Registration Problem"
 
 shopt -s extglob
@@ -8,8 +9,7 @@ read pattern
 pat="[a-zA-Z\d]{8,}(?=.*[@#$%^&+=]).*$"
 if [[ $pattern =~ $pat ]];
 then
-     echo yes;
+        echo password is valid;
 else
-     echo no;
+        echo password is invalid;
 fi
-
